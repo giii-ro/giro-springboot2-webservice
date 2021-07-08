@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Posts {
     @Id // 테이블의 pk필드를 나타냄
     @GeneratedValue(strategy = GenerationType.IDENTITY) // pk의 생성 규칙을 나타냄
-                                                        // GenerationType.IDENTITY 규칙 적용 -> auto_increment
+    private Long id;                                    // GenerationType.IDENTITY 규칙 적용 -> auto_increment
     @Column(length = 500, nullable = false)
     private String title;
 
