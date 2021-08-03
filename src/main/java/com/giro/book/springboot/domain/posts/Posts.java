@@ -1,5 +1,6 @@
 package com.giro.book.springboot.domain.posts;
 
+import com.giro.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Entity // 테이블과 링크될 클래스임을 나타냄
 // 글래스의 카멜케이스 이름 -> 언더스코어 네이밍으로 테이블 이름을 매칭
 // Entity 클래스에서는 절대 Setter 메소드를 만들지 않음
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id // 테이블의 pk필드를 나타냄
     @GeneratedValue(strategy = GenerationType.IDENTITY) // pk의 생성 규칙을 나타냄
     private Long id;                                    // GenerationType.IDENTITY 규칙 적용 -> auto_increment
